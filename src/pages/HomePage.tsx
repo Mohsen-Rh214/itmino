@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerCarousel from '../components/BannerCarousel';
-import SpecialSales from '../components/SpecialSales';
+import BannerCarousel from '../features/home/components/BannerCarousel';
+import SpecialSales from '../features/home/components/SpecialSales';
 
 const HomePage: React.FC = () => {
   return (
