@@ -31,5 +31,23 @@ export const blogPosts: BlogPost[] = [
         title: 'نقد و بررسی لپ‌تاپ جدید Razer Blade 16',
         category: 'بررسی تخصصی',
         imageUrl: 'https://images.unsplash.com/photo-1678923223971-3a45c3632e2c?q=80&w=600&auto=format&fit=crop',
-    }
+    },
+    {
+        id: 5,
+        title: '۵ نکته برای افزایش عمر باتری لپ تاپ شما',
+        category: 'آموزش',
+        imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=600&auto-format&fit=crop',
+    },
+    {
+        id: 6,
+        title: 'معرفی بهترین SSDهای NVMe بازار',
+        category: 'راهنمای خرید',
+        imageUrl: 'https://images.unsplash.com/photo-1544890225-2f3faec4446f?q=80&w=600&auto=format&fit=crop',
+    },
+    {
+        id: 7,
+        title: 'آیا خنک کننده مایع برای سیستم شما ضروری است؟',
+        category: 'بررسی تخصصی',
+        imageUrl: 'https://images.unsplash.com/photo-1627286392339-1658d584982a?q=80&w=600&auto-format&fit=crop',
+    },
 ];

@@ -1,65 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MegaMenu from './MegaMenu';
+import HeaderTopBar from './HeaderTopBar';
 
 const Header: React.FC = () => {
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+
   return (
-    <header className="bg-white/80 backdrop-blur-xl w-full sticky top-0 z-50 border-b border-neutral-200/80">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-        
-          {/* Right Side: Logo and Categories */}
-          <div className="flex items-center gap-8">
-            <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <svg className="w-9 h-9 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <h1 className="text-2xl font-extrabold text-neutral-900">
-                آی تی مینو
-              </h1>
-            </a>
-             <nav className="hidden lg:flex">
-                <ul className="flex items-center">
-                  <li>
-                    <a href="#" className="text-neutral-600 font-bold text-sm hover:text-primary transition-colors duration-200 p-3 rounded-md flex items-center gap-2">
-                        دسته‌بندی‌ها
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" /></svg>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-          </div>
-
-          {/* Left Side: Search, Actions & Mobile Menu */}
-          <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              {/* Search Bar */}
-            <div className="hidden md:block relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 rtl:left-auto rtl:right-0 rtl:pr-3">
-                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </span>
-                <input
-                    type="text"
-                    placeholder="جستجوی محصول..."
-                    className="w-full py-2.5 pl-10 pr-4 rtl:pr-10 rtl:pl-4 text-neutral-700 bg-neutral-100 border border-transparent rounded-full focus:outline-none focus:bg-white focus:border-primary transition-all duration-300 text-sm"
-                    aria-label="جستجوی محصول"
-                />
-            </div>
-              {/* Cart Icon */}
-              <button className="p-2 text-neutral-500 hover:text-primary rounded-full hover:bg-neutral-200/60 transition-colors focus:outline-none" aria-label="سبد خرید">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-              </button>
-
-              {/* Sign in Button */}
-              <a href="#" className="hidden sm:inline-block px-5 py-2.5 text-sm font-bold text-white bg-primary rounded-full hover:opacity-90 transition-opacity">
-                ورود / ثبت نام
+    <header 
+      className="w-full sticky top-0 z-50"
+      onMouseLeave={() => setIsMegaMenuOpen(false)}
+    >
+      <HeaderTopBar />
+      <div className="bg-white/80 backdrop-blur-xl border-b border-neutral-200/70 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-18 gap-4">
+          
+            {/* Right Side: Logo and Categories */}
+            <div className="flex items-center gap-8 flex-shrink-0">
+              <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <svg className="w-9 h-9 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <h1 className="text-3xl font-extrabold text-neutral-900 hidden sm:block">
+                  آی تی مینو
+                </h1>
               </a>
+               <nav className="hidden lg:flex">
+                  <ul className="flex items-center">
+                    <li onMouseEnter={() => setIsMegaMenuOpen(true)}>
+                      <a href="#" className="text-neutral-600 font-semibold text-base hover:text-primary transition-all duration-200 p-3 rounded-md inline-flex items-center gap-1 hover:-translate-y-0.5">
+                          دسته‌بندی‌ها
+                          <svg xmlns="http://www.w3.org/2000/svg" className={`h-4 w-4 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                          </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
 
-              {/* Mobile Menu Button */}
-              <div className="lg:hidden">
-                <button className="p-2 text-neutral-500 rounded-full hover:bg-neutral-200/60 transition-colors focus:outline-none" aria-label="منوی اصلی">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            {/* Center: Search Bar */}
+            <div className="flex-1 hidden md:flex justify-center px-4">
+              <form className="relative w-full max-w-xl">
+                <input
+                  type="text"
+                  placeholder="جستجوی محصول مورد نظر شما..."
+                  className="w-full py-3 pr-5 pl-12 text-neutral-700 bg-neutral-100/80 placeholder:text-neutral-500 border border-transparent rounded-full focus:outline-none focus:bg-white focus:border-primary/40 focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-sm"
+                  aria-label="جستجوی محصول"
+                />
+                <button type="submit" className="absolute top-0 left-0 h-full px-4 text-neutral-500 hover:text-primary transition-colors rounded-full" aria-label="جستجو">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
-              </div>
+              </form>
+            </div>
+
+            {/* Left Side: Actions */}
+            <div className="flex items-center gap-2">
+                {/* Wishlist Icon */}
+                <button className="p-2.5 text-neutral-500 hover:text-primary rounded-full hover:bg-neutral-100 transition-all focus:outline-none hover:scale-110 active:scale-100" aria-label="علاقه‌مندی‌ها">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+
+                {/* Cart Icon */}
+                <button className="p-2.5 text-neutral-500 hover:text-primary rounded-full hover:bg-neutral-100 transition-all focus:outline-none hover:scale-110 active:scale-100" aria-label="سبد خرید">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </button>
+
+                {/* Divider */}
+                <div className="w-px h-6 bg-neutral-200/80 hidden sm:block mx-2"></div>
+
+                {/* Sign in Button */}
+                <a href="#" className="hidden sm:flex items-center gap-2 text-neutral-600 hover:text-primary font-semibold text-sm transition-colors rounded-full p-2.5 hover:bg-neutral-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span className="hidden lg:inline">ورود / ثبت نام</span>
+                </a>
+
+                {/* Mobile Menu Button */}
+                <div className="lg:hidden">
+                  <button className="p-2.5 text-neutral-500 rounded-full hover:bg-neutral-100 transition-colors focus:outline-none" aria-label="منوی اصلی">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                  </button>
+                </div>
+            </div>
           </div>
         </div>
+        <MegaMenu isOpen={isMegaMenuOpen} />
       </div>
     </header>
   );

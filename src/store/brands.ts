@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Brand {
     name: string;
-    logo: React.ReactNode;
+    logo: React.ReactElement;
 }
 
 export const brands: Brand[] = [

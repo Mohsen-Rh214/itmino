@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Product } from '../../../store/products';
 import { Spotlight } from '../../../store/spotlight';
+import { useDraggableScroll } from '../../../hooks/useDraggableScroll';
 
 interface BrandSpotlightProps {
   spotlight: Spotlight;
@@ -9,7 +10,7 @@ interface BrandSpotlightProps {
 }
 
 const SpotlightProductCard: React.FC<{ product: Product }> = ({ product }) => (
-  <a href="#" className="flex-shrink-0 w-40 group">
+  <a href="#" className="flex-shrink-0 w-32 group">
     <div className="aspect-square w-full bg-neutral-100/70 rounded-2xl overflow-hidden">
       <img 
         src={product.imageUrl} 
@@ -18,31 +19,34 @@ const SpotlightProductCard: React.FC<{ product: Product }> = ({ product }) => (
         loading="lazy"
       />
     </div>
-    <h4 className="text-xs font-bold text-neutral-700 mt-2 truncate">{product.name}</h4>
-    <p className="text-sm font-extrabold text-neutral-900">{product.discountPrice.toLocaleString('fa-IR')} تومان</p>
+    <h4 className="text-xs font-semibold text-neutral-700 mt-2 truncate">{product.name}</h4>
+    <p className="text-sm font-bold text-neutral-900">{product.discountPrice.toLocaleString('fa-IR')} تومان</p>
   </a>
 );
 
 const BrandSpotlight: React.FC<BrandSpotlightProps> = ({ spotlight, products, reverseLayout = false }) => {
+  const scrollContainer = useRef<HTMLDivElement>(null);
+  useDraggableScroll(scrollContainer);
+  
   return (
     <section className="bg-neutral-50 rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-2" aria-labelledby={`brand-spotlight-${spotlight.brandName}`}>
-      <div className={`flex flex-col justify-center p-8 ${reverseLayout ? 'lg:order-2' : ''}`}>
+      <div className={`flex flex-col justify-center p-10 ${reverseLayout ? 'lg:order-2' : ''}`}>
         <h3 id={`brand-spotlight-${spotlight.brandName}`} className="text-sm font-bold text-primary">{spotlight.brandName}</h3>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mt-2">{spotlight.title}</h2>
-        <p className="text-neutral-600 mt-4 max-w-md">{spotlight.description}</p>
+        <h2 className="text-3xl font-extrabold text-neutral-800 mt-2">{spotlight.title}</h2>
+        <p className="text-neutral-600 mt-4 max-w-md text-sm leading-relaxed">{spotlight.description}</p>
         
         <div className="mt-8">
-          <div className="flex space-x-4 rtl:space-x-reverse overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div ref={scrollContainer} className="flex space-x-3 rtl:space-x-reverse overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide cursor-grab">
             {products.map(p => <SpotlightProductCard key={p.id} product={p} />)}
           </div>
         </div>
          <div className="mt-6">
-            <a href="#" className="font-bold text-primary hover:text-secondary transition-colors text-sm">
+            <a href="#" className="font-bold text-primary hover:text-primary/80 transition-all text-sm inline-block hover:-translate-x-1">
               مشاهده همه محصولات {spotlight.brandName} &rarr;
             </a>
           </div>
       </div>
-      <div className={`relative w-full min-h-[300px] lg:h-auto ${reverseLayout ? 'lg:order-1' : ''}`}>
+      <div className={`relative w-full min-h-[250px] lg:h-auto ${reverseLayout ? 'lg:order-1' : ''}`}>
         <img 
           src={spotlight.bannerUrl} 
           alt={`${spotlight.brandName} spotlight`} 
