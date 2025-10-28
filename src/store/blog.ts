@@ -1,0 +1,35 @@
+// Simulates fetching blog data from an API
+
+export interface BlogPost {
+    id: number;
+    title: string;
+    category: string;
+    imageUrl: string;
+}
+
+export const blogPosts: BlogPost[] = [
+    {
+        id: 1,
+        title: 'راهنمای جامع خرید کارت گرافیک در سال ۲۰۲۴',
+        category: 'راهنمای خرید',
+        imageUrl: 'https://images.unsplash.com/photo-1597862356722-c43c1cb47344?q=80&w=600&auto=format&fit=crop',
+    },
+    {
+        id: 2,
+        title: 'مقایسه بهترین پردازنده‌های گیمینگ: Intel در برابر AMD',
+        category: 'بررسی تخصصی',
+        imageUrl: 'https://images.unsplash.com/photo-1633537871637-671a5f333550?q=80&w=600&auto=format&fit=crop',
+    },
+    {
+        id: 3,
+        title: 'چگونه بهترین مانیتور را برای کار و بازی انتخاب کنیم؟',
+        category: 'راهنمای خرید',
+        imageUrl: 'https://images.unsplash.com/photo-1616440347434-f17f6a72b839?q=80&w=600&auto=format&fit=crop',
+    },
+    {
+        id: 4,
+        title: 'نقد و بررسی لپ‌تاپ جدید Razer Blade 16',
+        category: 'بررسی تخصصی',
+        imageUrl: 'https://images.unsplash.com/photo-1678923223971-3a45c3632e2c?q=80&w=600&auto=format&fit=crop',
+    }
+];
