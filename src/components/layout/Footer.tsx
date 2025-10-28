@@ -2,7 +2,7 @@ import React from 'react';
 
 const ServiceItem: React.FC<{ icon: React.ReactNode; title: string; subtitle: string }> = ({ icon, title, subtitle }) => (
     <div className="flex items-center space-x-4 rtl:space-x-reverse">
-        <div className="text-blue-400">{icon}</div>
+        <div className="text-brand-light">{icon}</div>
         <div>
             <p className="font-semibold text-white">{title}</p>
             <p className="text-sm text-gray-400">{subtitle}</p>
@@ -45,15 +45,15 @@ const Footer: React.FC = () => {
             {/* About ITMINO */}
             <div className="lg:col-span-1">
                 <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
-                    <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <svg className="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <h1 className="text-2xl font-bold text-white">آی تی مینو</h1>
                 </a>
                 <p className="text-gray-400 text-sm leading-relaxed">
                     فروشگاه تخصصی آی تی مینو، مرجع کامل خرید آنلاین قطعات کامپیوتر، لپ‌تاپ، موبایل و لوازم جانبی با بهترین قیمت و کیفیت.
                 </p>
                 <div className="mt-6 text-sm">
-                    <p className="mb-2"><strong>تلفن:</strong> <a href="tel:021-12345678" className="hover:text-blue-400 transition-colors">۱۲۳۴۵۶۷۸-۰۲۱</a></p>
-                    <p><strong>ایمیل:</strong> <a href="mailto:support@itmino.com" className="hover:text-blue-400 transition-colors">support@itmino.com</a></p>
+                    <p className="mb-2"><strong>تلفن:</strong> <a href="tel:021-12345678" className="hover:text-brand-light transition-colors">۱۲۳۴۵۶۷۸-۰۲۱</a></p>
+                    <p><strong>ایمیل:</strong> <a href="mailto:support@itmino.com" className="hover:text-brand-light transition-colors">support@itmino.com</a></p>
                 </div>
             </div>
 
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                             className="w-full px-4 py-2 text-gray-800 bg-gray-200 rounded-r-lg focus:outline-none focus:bg-white"
                             aria-label="ایمیل برای خبرنامه"
                         />
-                        <button type="submit" className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-l-lg hover:bg-blue-700 transition-colors">
+                        <button type="submit" className="px-4 py-2 bg-brand text-white font-semibold rounded-l-lg hover:bg-brand-dark transition-colors">
                             ثبت
                         </button>
                     </div>

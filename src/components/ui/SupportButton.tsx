@@ -3,7 +3,7 @@ import React from 'react';
 const SupportButton: React.FC = () => {
   return (
     <button
-      className="fixed bottom-6 left-6 rtl:left-auto rtl:right-6 z-50 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+      className="fixed bottom-6 left-6 rtl:left-auto rtl:right-6 z-50 bg-brand text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-dark transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-opacity-50"
       aria-label="پشتیبانی آنلاین"
       title="پشتیبانی آنلاین"
     >
