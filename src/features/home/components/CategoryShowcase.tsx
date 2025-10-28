@@ -13,9 +13,9 @@ const CategoryShowcase: React.FC = () => {
                     <a
                         key={index}
                         href="#"
-                        className="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center aspect-square text-center"
+                        className="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:shadow-brand/20 hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center aspect-square text-center group"
                     >
-                        <div className="text-brand-dark mb-2">
+                        <div className="text-brand-dark mb-2 transition-transform duration-300 group-hover:scale-110">
                             {category.icon}
                         </div>
                         <h3 className="font-semibold text-gray-700">{category.name}</h3>
