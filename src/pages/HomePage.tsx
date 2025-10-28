@@ -4,10 +4,10 @@ import SpecialSales from '../features/home/components/SpecialSales';
 
 const HomePage: React.FC = () => {
   return (
-    <>
+    <div className="space-y-8">
       <BannerCarousel />
       <SpecialSales />
-    </>
+    </div>
   );
 };
 
