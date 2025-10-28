@@ -22,9 +22,9 @@ const BannerCarousel: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <section className="h-64 md:h-96 rounded-lg overflow-hidden relative group shadow-lg mb-8" aria-label="اسلایدر بنرهای تبلیغاتی">
+    <section className="h-64 md:h-96 rounded-lg overflow-hidden relative group shadow-lg" aria-label="اسلایدر بنرهای تبلیغاتی">
       <div
-        style={{ transform: `translateX(${currentIndex * 100}%)` }}
+        style={{ transform: `translateX(-${currentIndex * 100}%)`, direction: 'ltr' }}
         className="w-full h-full flex transition-transform duration-700 ease-in-out"
       >
         {slides.map((slide, index) => (

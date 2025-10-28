@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../../../components/ui/ProductCard';
+import ProductCardSkeleton from '../../../components/ui/ProductCardSkeleton';
 import { specialProducts } from '../../../store/products';
 
 const calculateTimeLeft = () => {
@@ -21,6 +22,16 @@ const calculateTimeLeft = () => {
 
 const SpecialSales: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate fetching data
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500); // Simulate a 1.5 second network request
+
+    return () => clearTimeout(loadingTimer);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,16 +84,20 @@ const SpecialSales: React.FC = () => {
       
       {/* Product cards grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {specialProducts.map(product => (
-            <ProductCard 
-                key={product.id}
-                imageUrl={product.imageUrl}
-                name={product.name}
-                originalPrice={product.originalPrice}
-                discountPrice={product.discountPrice}
-                discountPercentage={product.discountPercentage}
-            />
-        ))}
+        {isLoading ? (
+          Array.from({ length: 4 }).map((_, index) => <ProductCardSkeleton key={index} />)
+        ) : (
+          specialProducts.map(product => (
+              <ProductCard 
+                  key={product.id}
+                  imageUrl={product.imageUrl}
+                  name={product.name}
+                  originalPrice={product.originalPrice}
+                  discountPrice={product.discountPrice}
+                  discountPercentage={product.discountPercentage}
+              />
+          ))
+        )}
       </div>
     </section>
   );
