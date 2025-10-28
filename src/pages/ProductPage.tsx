@@ -104,9 +104,9 @@ const ProductPage: React.FC = () => {
       <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-gray-500">
               <li><a href="#" className="hover:text-[#A88562] transition-colors">صفحه اصلی</a></li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLineCap="round" strokeLineJoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></li>
               <li><a href="#" className="hover:text-[#A88562] transition-colors">لپ‌تاپ</a></li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLineCap="round" strokeLineJoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></li>
               <li className="font-medium text-gray-700" aria-current="page">مک بوک پرو M2</li>
           </ol>
       </nav>
@@ -180,7 +180,7 @@ const ProductPage: React.FC = () => {
                 </div>
 
                 <button className="w-full sm:w-auto flex-grow bg-[#A88562] text-white font-bold py-4 px-10 rounded-full transition-all duration-300 hover:bg-[#967558] focus:outline-none focus:ring-4 focus:ring-[#A88562]/30 flex items-center justify-center text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLineCap="round" strokeLineJoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                     <span>افزودن به سبد خرید</span>
                 </button>
             </div>
