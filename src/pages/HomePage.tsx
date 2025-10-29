@@ -1,33 +1,40 @@
 import React from 'react';
 import HeroSection from '../features/home/components/HeroSection';
-import ServicesBar from '../features/home/components/ServicesBar';
 import ProductCarousel from '../features/home/components/ProductCarousel';
-import FeaturedCategories from '../features/home/components/FeaturedCategories';
+import CategoryCircles from '../features/home/components/CategoryCircles';
 import GamingZone from '../features/home/components/GamingZone';
 import BrandShowcase from '../features/home/components/BrandShowcase';
 import BrandSpotlight from '../features/home/components/BrandSpotlight';
-import QuickAccessProducts from '../features/home/components/QuickAccessProducts';
+import AmazingOffers from '../features/home/components/QuickAccessProducts';
 import BlogPosts from '../features/home/components/BlogPosts';
 import PromoBanners from '../features/home/components/PromoBanners';
 import { newArrivals, topSellers, appleProducts, razerProducts, bestDeals } from '../store/products';
 import { spotlightData } from '../store/spotlight';
+import { upperBanners, lowerBanners } from '../store/promoBanners';
 
 const HomePage: React.FC = () => {
   return (
     <div className="space-y-16">
-      <div className="pt-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <HeroSection />
-        </div>
-        <div className="mt-12">
-          <ServicesBar />
-        </div>
+      <HeroSection />
+
+      <CategoryCircles />
+      
+      <AmazingOffers products={bestDeals} />
+      
+      <div className="container mx-auto sm:px-6 lg:px-8">
+         <BrandSpotlight spotlight={spotlightData.razer} products={razerProducts} reverseLayout />
+      </div>
+
+      <GamingZone />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+         <BrandSpotlight spotlight={spotlightData.apple} products={appleProducts} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FeaturedCategories />
+        <PromoBanners banners={upperBanners} />
       </div>
-
+{/* 
       <section className="bg-soft-blue py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ProductCarousel 
@@ -37,15 +44,13 @@ const HomePage: React.FC = () => {
             link="#"
           />
         </div>
-      </section>
-
-      <QuickAccessProducts products={bestDeals} />
+      </section> */}
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <PromoBanners />
+        <PromoBanners banners={lowerBanners} />
       </div>
 
-      <section className="bg-soft-teal py-12">
+      {/* <section className="bg-soft-teal py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ProductCarousel 
             title="پرفروش‌ترین‌ها"
@@ -54,17 +59,10 @@ const HomePage: React.FC = () => {
             link="#"
           />
         </div>
-      </section>
+      </section> */}
        
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-         <BrandSpotlight spotlight={spotlightData.apple} products={appleProducts} />
-      </div>
-      
-      <GamingZone />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-         <BrandSpotlight spotlight={spotlightData.razer} products={razerProducts} reverseLayout />
-      </div>
+      
 
        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <BrandShowcase />

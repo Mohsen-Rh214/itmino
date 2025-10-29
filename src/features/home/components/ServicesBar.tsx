@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ServiceItem: React.FC<{ icon: React.ReactNode; title: string; subtitle: string }> = ({ icon, title, subtitle }) => (
-    <a href="#" className="flex items-center space-x-4 rtl:space-x-reverse group p-4 rounded-2xl transition-colors duration-300 hover:bg-neutral-100/60">
+    <a href="#" className="flex items-center space-x-4 rtl:space-x-reverse group p-2 sm:p-4 rounded-2xl transition-colors duration-300 hover:bg-neutral-100/60">
         <div className="text-primary text-2xl transition-transform duration-300 group-hover:scale-110">{icon}</div>
         <div>
             <p className="font-bold text-neutral-800 text-sm">{title}</p>
@@ -13,7 +13,7 @@ const ServiceItem: React.FC<{ icon: React.ReactNode; title: string; subtitle: st
 const ServicesBar: React.FC = () => {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 animate-fadeIn" aria-label="Our Services">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-neutral-200/80">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 py-6 border-y border-neutral-200/80">
             <ServiceItem 
                 icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
                 title="تحویل اکسپرس"

@@ -1,54 +1,52 @@
 import { useRef, useEffect, RefObject } from 'react';
 
 export const useDraggableScroll = (ref: RefObject<HTMLElement>) => {
-  const isDragging = useRef(false);
+  const isDown = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
-  const velocity = useRef(0);
-  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const onMouseDown = (e: MouseEvent) => {
-      isDragging.current = true;
+    const mouseDown = (e: MouseEvent) => {
+      isDown.current = true;
       el.classList.add('cursor-grabbing');
       el.classList.remove('cursor-grab');
       startX.current = e.pageX - el.offsetLeft;
       scrollLeft.current = el.scrollLeft;
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
     };
 
-    const onMouseLeaveOrUp = () => {
-      isDragging.current = false;
+    const mouseLeave = () => {
+      isDown.current = false;
       el.classList.remove('cursor-grabbing');
       el.classList.add('cursor-grab');
     };
 
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDragging.current) return;
+    const mouseUp = () => {
+      isDown.current = false;
+      el.classList.remove('cursor-grabbing');
+      el.classList.add('cursor-grab');
+    };
+
+    const mouseMove = (e: MouseEvent) => {
+      if (!isDown.current) return;
       e.preventDefault();
       const x = e.pageX - el.offsetLeft;
-      const walk = (x - startX.current) * 1.5; // Multiplier for faster scroll
+      const walk = (x - startX.current);
       el.scrollLeft = scrollLeft.current - walk;
     };
 
-    el.addEventListener('mousedown', onMouseDown);
-    el.addEventListener('mouseleave', onMouseLeaveOrUp);
-    el.addEventListener('mouseup', onMouseLeaveOrUp);
-    el.addEventListener('mousemove', onMouseMove);
+    el.addEventListener('mousedown', mouseDown);
+    el.addEventListener('mouseleave', mouseLeave);
+    el.addEventListener('mouseup', mouseUp);
+    el.addEventListener('mousemove', mouseMove);
 
     return () => {
-      el.removeEventListener('mousedown', onMouseDown);
-      el.removeEventListener('mouseleave', onMouseLeaveOrUp);
-      el.removeEventListener('mouseup', onMouseLeaveOrUp);
-      el.removeEventListener('mousemove', onMouseMove);
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
+      el.removeEventListener('mousedown', mouseDown);
+      el.removeEventListener('mouseleave', mouseLeave);
+      el.removeEventListener('mouseup', mouseUp);
+      el.removeEventListener('mousemove', mouseMove);
     };
   }, [ref]);
 };

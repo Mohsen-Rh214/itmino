@@ -8,11 +8,11 @@ interface Brand {
 export const brands: Brand[] = [
     {
         name: 'Apple',
-        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg", alt: "Apple Logo", className: "h-full w-auto", loading: "lazy" })
+        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png", alt: "Apple Logo", className: "h-full w-auto", loading: "lazy" })
     },
     {
         name: 'Samsung',
-        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg", alt: "Samsung Logo", className: "h-full w-auto", loading: "lazy" })
+        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Samsung_Black_icon.svg/1920px-Samsung_Black_icon.svg.png", alt: "Samsung Logo", className: "h-full w-auto", loading: "lazy" })
     },
     {
         name: 'NVIDIA',
@@ -20,7 +20,7 @@ export const brands: Brand[] = [
     },
     {
         name: 'Intel',
-        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282020%2C_dark_blue%29.svg", alt: "Intel Logo", className: "h-full w-auto", loading: "lazy" })
+        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Intel_logo_2023.svg/1920px-Intel_logo_2023.svg.png", alt: "Intel Logo", className: "h-full w-auto", loading: "lazy" })
     },
     {
         name: 'AMD',
@@ -28,6 +28,6 @@ export const brands: Brand[] = [
     },
     {
         name: 'Razer',
-        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/en/4/40/Razer_snake_logo.svg", alt: "Razer Logo", className: "h-full w-auto", loading: "lazy" })
+        logo: React.createElement('img', { src: "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Razer_snake_logo.svg/150px-Razer_snake_logo.svg.png", alt: "Razer Logo", className: "h-full w-auto", loading: "lazy" })
     }
 ];

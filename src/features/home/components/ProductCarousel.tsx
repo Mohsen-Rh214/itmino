@@ -16,7 +16,6 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
   const [isLoading, setIsLoading] = useState(true);
   const scrollContainer = useRef<HTMLDivElement>(null);
   const [isScrollable, setIsScrollable] = useState({ left: false, right: true });
-  const [isHovered, setIsHovered] = useState(false);
   
   useDraggableScroll(scrollContainer);
 
@@ -28,11 +27,15 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
   const checkScrollability = () => {
     if (scrollContainer.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current;
+      const canScrollLeft = scrollLeft > 1;
       const canScrollRight = scrollWidth > clientWidth && scrollLeft < scrollWidth - clientWidth - 1;
-      setIsScrollable({
-        left: scrollLeft > 1,
-        right: canScrollRight,
-      });
+      
+      if (isScrollable.left !== canScrollLeft || isScrollable.right !== canScrollRight) {
+        setIsScrollable({
+          left: canScrollLeft,
+          right: canScrollRight,
+        });
+      }
     }
   };
 
@@ -68,7 +71,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
       {title && (
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
-              <h2 id={`carousel-title-${title.replace(/\s+/g, '-')}`} className={`text-3xl font-extrabold ${titleColor}`}>
+              <h2 id={`carousel-title-${title.replace(/\s+/g, '-')}`} className={`text-2xl sm:text-3xl font-extrabold ${titleColor}`}>
               {title}
               </h2>
               {subtitle && <p className={`${subtitleColor} text-sm mt-1.5`}>{subtitle}</p>}
@@ -79,11 +82,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
         </div>
       )}
       
-      <div 
-        className="relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="relative group/carousel">
         <div 
           ref={scrollContainer}
           className="flex space-x-3 rtl:space-x-reverse overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide cursor-grab"
@@ -107,7 +106,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
         <button
           onClick={() => scroll('left')}
           disabled={!isScrollable.left}
-          className={`absolute top-1/2 -left-3 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-white transition-all z-10 disabled:cursor-not-allowed hover:scale-110 active:scale-100 ${isHovered ? 'opacity-100' : 'opacity-0'} disabled:opacity-0`}
+          className="absolute top-1/2 -left-3 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 items-center justify-center shadow-md hover:bg-white transition-all z-10 disabled:cursor-not-allowed hover:scale-110 active:scale-100 disabled:opacity-0 hidden md:flex md:opacity-0 group-hover/carousel:md:opacity-100"
           aria-label="محصولات قبلی"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-neutral-800">
@@ -117,7 +116,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ title, subtitle, link
          <button
           onClick={() => scroll('right')}
           disabled={!isScrollable.right}
-          className={`absolute top-1/2 -right-3 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-white transition-all z-10 disabled:cursor-not-allowed hover:scale-110 active:scale-100 ${isHovered ? 'opacity-100' : 'opacity-0'} disabled:opacity-0`}
+          className="absolute top-1/2 -right-3 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 items-center justify-center shadow-md hover:bg-white transition-all z-10 disabled:cursor-not-allowed hover:scale-110 active:scale-100 disabled:opacity-0 hidden md:flex md:opacity-0 group-hover/carousel:md:opacity-100"
           aria-label="محصولات بعدی"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-neutral-800">

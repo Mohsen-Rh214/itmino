@@ -12,7 +12,7 @@ export interface Product {
 export const newArrivals: Product[] = [
   {
     id: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/c91abf7f8ff0fd956b6ebf2acbfc449398992b14_1755786993.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90',
     name: 'لپ تاپ Apple MacBook Pro M2',
     originalPrice: 85000000,
     discountPrice: 79900000,
@@ -20,7 +20,7 @@ export const newArrivals: Product[] = [
   },
   {
     id: 2,
-    imageUrl: 'https://images.unsplash.com/photo-1546435770-a3e426bf4022?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/sony-wf-1000xm5-black-case-6669a683772792639dec3819',
     name: 'هدفون بی‌سیم Sony WH-1000XM5',
     originalPrice: 18000000,
     discountPrice: 15500000,
@@ -28,7 +28,7 @@ export const newArrivals: Product[] = [
   },
   {
     id: 3,
-    imageUrl: 'https://images.unsplash.com/photo-1627843563095-2df978262402?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2023-2-logitech-mx-mechanical-652d06f2eb21a6b54f50df42',
     name: 'کیبورد مکانیکال Logitech MX Mechanical',
     originalPrice: 9500000,
     discountPrice: 7900000,
@@ -36,7 +36,7 @@ export const newArrivals: Product[] = [
   },
   {
     id: 5,
-    imageUrl: 'https://images.unsplash.com/photo-1593152167538-2a014c234d39?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2023-10-google-pixel-8-pro-bay-652d21cf8716201626d19d0b',
     name: 'گوشی موبایل Google Pixel 8 Pro',
     originalPrice: 65000000,
     discountPrice: 59000000,
@@ -44,7 +44,7 @@ export const newArrivals: Product[] = [
   },
   {
     id: 11,
-    imageUrl: 'https://images.unsplash.com/photo-1542496658-60b96a0b5f59?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2023-9-apple-watch-s9-starlight-aluminumbraided-solo-loop-guava-1-652d20aeeb21a6b54f511ffb',
     name: 'ساعت هوشمند Apple Watch Series 9',
     originalPrice: 25000000,
     discountPrice: 22500000,
@@ -63,7 +63,7 @@ export const topSellers: Product[] = [
   },
   {
     id: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/c91abf7f8ff0fd956b6ebf2acbfc449398992b14_1755786993.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90',
     name: 'لپ تاپ Apple MacBook Pro M2',
     originalPrice: 85000000,
     discountPrice: 79900000,
@@ -71,7 +71,7 @@ export const topSellers: Product[] = [
   },
   {
     id: 12,
-    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2018-9-3df5f25a-3d0c-4130-9275-0d59965cb5f9-652d04eb8716201626d0c4fe',
     name: 'مانیتور گیمینگ 34 اینچ Ultra-Wide',
     originalPrice: 42000000,
     discountPrice: 35000000,
@@ -87,7 +87,7 @@ export const topSellers: Product[] = [
   },
    {
     id: 13,
-    imageUrl: 'https://images.unsplash.com/photo-1563297007-162a4a494975?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2021-9-razer-viper-ultimate-652d21948716201626d19129',
     name: 'ماوس گیمینگ بی‌سیم Razer Viper Ultimate',
     originalPrice: 8000000,
     discountPrice: 6900000,
@@ -98,7 +98,7 @@ export const topSellers: Product[] = [
 export const gamingProducts: Product[] = [
   {
     id: 4,
-    imageUrl: 'https://images.unsplash.com/photo-1616900224379-d41584a87556?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/nvidia-rtx-4080-super-logo-fan-65be3fc1381b5915be4f12f8',
     name: 'کارت گرافیک NVIDIA RTX 4080 Super',
     originalPrice: 92000000,
     discountPrice: 88500000,
@@ -106,7 +106,7 @@ export const gamingProducts: Product[] = [
   },
   {
     id: 12,
-    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2018-9-3df5f25a-3d0c-4130-9275-0d59965cb5f9-652d04eb8716201626d0c4fe',
     name: 'مانیتور گیمینگ 34 اینچ Ultra-Wide',
     originalPrice: 42000000,
     discountPrice: 35000000,
@@ -114,7 +114,7 @@ export const gamingProducts: Product[] = [
   },
   {
     id: 13,
-    imageUrl: 'https://images.unsplash.com/photo-1563297007-162a4a494975?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2021-9-razer-viper-ultimate-652d21948716201626d19129',
     name: 'ماوس گیمینگ بی‌سیم Razer Viper Ultimate',
     originalPrice: 8000000,
     discountPrice: 6900000,
@@ -122,7 +122,7 @@ export const gamingProducts: Product[] = [
   },
   {
     id: 14,
-    imageUrl: 'https://images.unsplash.com/photo-1587831990711-23d72d4a623f?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/msi-mpg-gungnir-300r-airflow-black-65d12696ad00028634ae9e90',
     name: 'کیس گیمینگ RGB با خنک‌کننده مایع',
     originalPrice: 15000000,
     discountPrice: 13500000,
@@ -175,7 +175,7 @@ export const appleProducts: Product[] = [
   newArrivals[4],
   {
     id: 15,
-    imageUrl: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://www.technolife.com/image/color_image_TLP-33584_ffffff_f775b7a0-fda0-4905-8c1d-6f7f98128a38.png',
     name: 'Apple Magic Keyboard',
     originalPrice: 8000000,
     discountPrice: 7200000,
@@ -195,7 +195,7 @@ export const razerProducts: Product[] = [
   topSellers[4],
   {
     id: 17,
-    imageUrl: 'https://images.unsplash.com/photo-1604832416043-349a029c185a?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2021-7-razer-blade-15-advanced-model-2020-ports-652cfc14eb21a6b54f4f07b3',
     name: 'Razer Blade 15 Gaming Laptop',
     originalPrice: 110000000,
     discountPrice: 99000000,
@@ -203,7 +203,7 @@ export const razerProducts: Product[] = [
   },
   {
     id: 18,
-    imageUrl: 'https://images.unsplash.com/photo-1614390099245-296e8387a20c?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2021-7-razer-huntsman-mini-1-652d21e28716201626d1a13d',
     name: 'Razer Huntsman Mini Keyboard',
     originalPrice: 6500000,
     discountPrice: 5800000,
@@ -211,7 +211,7 @@ export const razerProducts: Product[] = [
   },
    {
     id: 19,
-    imageUrl: 'https://images.unsplash.com/photo-1629429489159-1361e94fad44?q=80&w=800&auto-format&fit=crop',
+    imageUrl: 'https://api2.zoomit.ir/media/2022-5-razer-kraken-v3-652d21b08716201626d196ee',
     name: 'Razer Kraken V3 Headset',
     originalPrice: 5000000,
     discountPrice: 4200000,

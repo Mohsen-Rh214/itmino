@@ -63,6 +63,30 @@ export const categories: Category[] = [
         bgColor: 'bg-orange-50',
     },
     {
+        name: 'کیس',
+        icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.6H8.25a3.375 3.375 0 00-3.285 2.6L2.7 16.02a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z" })),
+        borderColor: 'border-gray-500',
+        bgColor: 'bg-gray-50',
+    },
+    {
+        name: 'کیبورد',
+        icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" })),
+        borderColor: 'border-cyan-500',
+        bgColor: 'bg-cyan-50',
+    },
+    {
+        name: 'ماوس',
+        icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.042 21.672L13.684 16.6m0 0l-2.51-2.222m2.51 2.222l2.222 2.51m-4.732-4.732l5.704-5.704a2.25 2.25 0 00-3.182-3.182l-5.704 5.704m2.51 2.222a2.25 2.25 0 11-3.182-3.182 2.25 2.25 0 013.182 3.182zM4.5 12.75a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75v-.01z" })),
+        borderColor: 'border-sky-500',
+        bgColor: 'bg-sky-50',
+    },
+    {
+        name: 'پاور',
+        icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M20.25 14.15v4.075c0 1.313-.865 2.5-2.025 2.5h-10.5c-1.16 0-2.025-1.187-2.025-2.5V14.15M12 18.375v-6.75m6.75 6.75v-6.75m-13.5 0v6.75M12 3.75l-4.5 4.5h9l-4.5-4.5z" })),
+        borderColor: 'border-emerald-500',
+        bgColor: 'bg-emerald-50',
+    },
+    {
         name: 'جانبی',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.042 21.672L13.684 16.6m0 0l-2.51-2.222m2.51 2.222l2.222 2.51M13.684 16.6l5.704-5.704a2.25 2.25 0 00-3.182-3.182l-5.704 5.704m2.51 2.222z" })),
         borderColor: 'border-lime-500',
